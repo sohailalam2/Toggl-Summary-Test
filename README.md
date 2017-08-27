@@ -53,3 +53,14 @@ Optionally you could change the following application settings
 - **--spring.data.mongodb.host**=MONGODB_HOSTNAME
 - **--spring.data.mongodb.port**=MONGODB_PORT
 
+## Endpoints
+                 
+The application will start at port 8080 and you can access the above endpoints as follows - 
+
+- [http://localhost:8080/import](http://localhost:8080/import)
+- [http://localhost:8080/export](http://localhost:8080/export)
+
+- HTTP GET /import - To import all your Toggl workspaces summary
+- HTTP GET /export - To export all your imported workspaces summary into Google spreadsheet
+
+_NOTE: Remember to import before you export!!_
