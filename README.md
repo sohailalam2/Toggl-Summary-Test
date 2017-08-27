@@ -53,14 +53,35 @@ Optionally you could change the following application settings
 - **--spring.data.mongodb.host**=MONGODB_HOSTNAME
 - **--spring.data.mongodb.port**=MONGODB_PORT
 
-## Endpoints
+## Usage and Screenshots
                  
 The application will start at port 8080 and you can access the above endpoints as follows - 
 
+
+### Import
+                                                 
+- HTTP GET /import - To import all your Toggl workspaces summary
 - [http://localhost:8080/import](http://localhost:8080/import)
+
+Once import is completed successfully (given that database is reachable), you should see a json response similar to this _(use google plugin such as JSON-handle to beautify the response)_- 
+
+![Import Json Response](docs/images/import-json-response.jpg)
+
+### Export
+
+- HTTP GET /export - To export all your imported workspaces summary into Google spreadsheet
 - [http://localhost:8080/export](http://localhost:8080/export)
 
-- HTTP GET /import - To import all your Toggl workspaces summary
-- HTTP GET /export - To export all your imported workspaces summary into Google spreadsheet
+The first time export is called, it will ask you to login to Google via a link that you can find in the console.
 
-_NOTE: Remember to import before you export!!_
+![Google Auth Link](docs/images/google-auth-link.jpg)
+
+You should navigate to the given link and accept the dialog after logging into your google account.
+
+![Google Auth Dialog](docs/images/google-auth-dialog.jpg)
+
+When login is successful and export is done, you will see a link to the google spreadsheet
+
+![Exported Spreadsheet Link](docs/images/export-spreadsheet-link.jpg)
+
+![Exported Spreadsheet](docs/images/spreadsheet.jpg)
